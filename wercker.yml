@@ -55,19 +55,9 @@ build:
 deploy:
  steps:
    - internal/docker-push:
-       username: $DOCKER_USERNAME
-       password: $DOCKER_PASSWORD
-       cmd: /pipeline/source/hello
-       port: "8080"
-       tag: latest
-       repository: aaronmack/demo-services-hello_world
-       registry: https://registry.hub.docker.com
-
-   - cng/cf-deploy:
-       api: $API
-       user: $USER
-       password: $PASSWORD
-       org: $ORG
-       space: $SPACE
-       appname: wercker-demo-services-hello_world
-       docker_image: aaronmack/demo-services-hello_world
+      username: $USERNAME
+      password: $PASSWORD
+      cmd: /pipeline/source/my-command
+      ports: "8080"
+      tag: latest
+      repository: aaronmack/demo-services-hello_world
