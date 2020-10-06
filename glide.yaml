@@ -1,0 +1,4 @@
+package: .
+import:
+- package: github.com/urfave/negroni
+  version: v2.0.2
